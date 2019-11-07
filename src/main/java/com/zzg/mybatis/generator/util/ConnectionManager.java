@@ -8,11 +8,11 @@ import java.sql.DriverManager;
  */
 public class ConnectionManager {
 
-    private static final String DB_URL = "jdbc:sqlite:./config/sqlite3.db";
+    private static final String DB_URL = "jdbc:mysql://192.168.10.122:3306/bqxny?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai";
 
     public static Connection getConnection() throws Exception {
-        Class.forName("org.sqlite.JDBC");
-        Connection conn = DriverManager.getConnection(DB_URL);
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection conn = DriverManager.getConnection(DB_URL,"xinnengyuan","bq@xny2019");
         return conn;
     }
 }
